@@ -1,1 +1,1 @@
-export const Hello = "Hello Cosmos";
+export { default as Test } from "./Test.svelte";
