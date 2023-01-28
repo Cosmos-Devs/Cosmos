@@ -1,0 +1,8 @@
+{
+  "name": "@cosmos-devs/core",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "dependencies": {
+    "typescript": "latest"
+  }
+}
