@@ -6,15 +6,15 @@
         "^build"
       ],
       "outputs": [
-        "dist/**",
-        ".next/**"
+        ".svelte-kit/**",
+        ".vercel/**",
+        "dist/**"
       ]
     },
-    "lint": {
-      "outputs": []
-    },
+    "lint": {},
     "dev": {
-      "cache": false
+      "cache": false,
+      "persistent": true
     }
   }
 }
