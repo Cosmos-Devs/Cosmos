@@ -3,6 +3,7 @@
   "pipeline": {
     "build": {
       "dependsOn": [
+        "check",
         "^build"
       ],
       "outputs": [
@@ -15,6 +16,14 @@
     "dev": {
       "cache": false,
       "persistent": true
+    },
+    "check": {
+      "dependsOn": [
+        "^check"
+      ],
+      "outputs": [
+        ".svelte-kit/**"
+      ]
     }
   }
 }
