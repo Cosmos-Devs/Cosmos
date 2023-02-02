@@ -1,0 +1,28 @@
+{
+  "name": "eslint-config-cosmos",
+  "version": "0.0.0",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "license": "MIT",
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.27.0",
+    "@typescript-eslint/parser": "^5.27.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-turbo": "latest",
+    "eslint-define-config": "^1.14.0",
+    "eslint-plugin-svelte3": "^4.0.0",
+    "typescript": "^4.9.4"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup index.ts --format cjs --dts --external typescript",
+    "dev": "tsup index.ts --format cjs --dts --external typescript --watch",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "tsup": "^6.5.0"
+  }
+}

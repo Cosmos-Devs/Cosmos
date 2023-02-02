@@ -1,5 +1,7 @@
 <script lang="ts">
-  import { Hello } from "./constant";
+  import { greet } from "./constants";
+
+  export let name = "Cosmos";
 </script>
 
-<p>check: {Hello}</p>
+<p>check: {greet(name)}</p>
