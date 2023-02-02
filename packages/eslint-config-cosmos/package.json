@@ -1,5 +1,5 @@
 {
-  "name": "eslint-config-custom",
+  "name": "eslint-config-cosmos",
   "version": "0.0.0",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -18,7 +18,8 @@
   },
   "scripts": {
     "build": "tsup index.ts --format cjs --dts --external typescript",
-    "dev": "tsup index.ts --format cjs --dts --external typescript --watch"
+    "dev": "tsup index.ts --format cjs --dts --external typescript --watch",
+    "lint": "eslint ."
   },
   "devDependencies": {
     "@types/node": "^18.11.18",

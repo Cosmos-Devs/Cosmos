@@ -1,6 +1,6 @@
-import { ESLintConfig } from "eslint-define-config";
+import { defineConfig } from "eslint-define-config";
 
-module.exports = {
+module.exports = defineConfig({
   parser: "@typescript-eslint/parser",
   extends: [
     "eslint:recommended",
@@ -9,7 +9,7 @@ module.exports = {
     "prettier",
   ],
   plugins: ["svelte3", "@typescript-eslint"],
-  ignorePatterns: ["*.cjs"],
+  ignorePatterns: ["*.cjs", "dist"],
   overrides: [{ files: ["*.svelte"], processor: "svelte3/svelte3" }],
   settings: {
     "svelte3/typescript": () => require("typescript"),
@@ -23,4 +23,4 @@ module.exports = {
     es2017: true,
     node: true,
   },
-} satisfies ESLintConfig;
+});

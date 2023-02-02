@@ -2,28 +2,19 @@
   "$schema": "https://turbo.build/schema.json",
   "pipeline": {
     "build": {
-      "dependsOn": [
-        "check",
-        "^build"
-      ],
-      "outputs": [
-        ".svelte-kit/**",
-        ".vercel/**",
-        "dist/**"
-      ]
+      "dependsOn": ["check", "^build"],
+      "outputs": [".svelte-kit/**", ".vercel/**", "dist/**"]
     },
-    "lint": {},
+    "lint": {
+      "dependsOn": ["eslint-config-cosmos#build"]
+    },
     "dev": {
       "cache": false,
       "persistent": true
     },
     "check": {
-      "dependsOn": [
-        "^check"
-      ],
-      "outputs": [
-        ".svelte-kit/**"
-      ]
+      "dependsOn": ["^check"],
+      "outputs": [".svelte-kit/**"]
     }
   }
 }
