@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Test } from '@cosmos-devs/core';
+  import { Test } from "@cosmos-devs/core";
 </script>
 
 <Test name="Test" />

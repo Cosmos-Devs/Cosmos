@@ -91,9 +91,6 @@ importers:
       '@types/node': 18.11.18
       tsup: 6.5.0_typescript@4.9.5
 
-  packages/tsconfig:
-    specifiers: {}
-
 packages:
 
   /@esbuild/android-arm/0.15.18:
