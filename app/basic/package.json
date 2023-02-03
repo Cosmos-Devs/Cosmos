@@ -12,7 +12,9 @@
     "format": "prettier --plugin-search-dir . --write ."
   },
   "dependencies": {
-    "@cosmos-devs/core": "workspace:*"
+    "@cosmos-devs/cms": "workspace:*",
+    "@cosmos-devs/core": "workspace:*",
+    "@supabase/supabase-js": "^2.7.0"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^1.0.0",
