@@ -10,8 +10,7 @@
   export let config: AdminConfig;
 
   if (browser) {
-    const controller = readable<Controller>(new Controller(config));
-    setContext('controller', controller);
+    setContext<Controller>('controller', new Controller(config));
   }
 </script>
 

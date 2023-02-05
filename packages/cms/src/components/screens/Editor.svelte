@@ -1,16 +1,14 @@
 <script lang="ts">
-  import type Service from "../../lib/services";
-  import type { BlockConfig, Template } from "../../types";
-  import { getContext } from "svelte";
-  import type { Writable } from "svelte/store";
-  import Block from "../helpers/Block.svelte";
+  import type { BlockConfig, Template } from '../../types';
+  import { getContext } from 'svelte';
+  import Block from '../helpers/Block.svelte';
+  import type Controller from '$lib/controller';
   export let template: Template;
 
   let datalist: { [x: string]: unknown }[] = [];
 
-  const controller = getContext<Writable<Service>>("controller");
-  controller.subscribe(async (c: any) => {
-    const data = await c.getItem("Blogs", "test");
+  const controller = getContext<Controller>('controller');
+  controller.getItem('Blogs', 'test').then((data) => {
     datalist = data.content.map(({ data }: any) => data);
   });
 
@@ -34,7 +32,7 @@
   >
     <button
       class="py-2 px-3 bg-neutral-900 text-white"
-      on:click={() => console.log("store")}>Opslaan</button
+      on:click={() => console.log('store')}>Opslaan</button
     >
   </header>
 

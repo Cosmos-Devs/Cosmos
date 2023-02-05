@@ -1,20 +1,16 @@
 <script lang="ts">
-  import Modal from "./Modal.svelte";
-  import type Service from "../../lib/services";
-  import type { Writable } from "svelte/store";
-  import { getContext } from "svelte";
-  import { createEventDispatcher } from "svelte";
-  import type { ServiceMedia } from "../../types";
+  import Modal from './Modal.svelte';
+  import { getContext } from 'svelte';
+  import { createEventDispatcher } from 'svelte';
+  import type { ServiceMedia } from '../../types';
+  import type Controller from '$lib/controller';
 
   const dispatch = createEventDispatcher();
 
-  const controller = getContext<Writable<Service>>("controller");
+  const controller = getContext<Controller>('controller');
 
   let media: ServiceMedia[] = [];
-  controller.subscribe(async (c) => {
-    const items = await c.getMediaList();
-    media = items.media;
-  });
+  controller.getMediaList().then((items) => (media = items.media));
 </script>
 
 <Modal>
@@ -22,7 +18,7 @@
     <h2 class="font-bold">Media</h2>
     <button
       class="py-2 px-3 bg-neutral-900 text-white"
-      on:click={() => dispatch("close")}>Sluiten</button
+      on:click={() => dispatch('close')}>Sluiten</button
     >
   </div>
 
@@ -31,7 +27,7 @@
   >
     {#each media as { src, alt }}
       <li>
-        <button on:click={() => dispatch("select", { src, alt })}>
+        <button on:click={() => dispatch('select', { src, alt })}>
           <img {src} {alt} loading="lazy" />
           <span>{alt}</span>
         </button>
