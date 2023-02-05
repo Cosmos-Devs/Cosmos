@@ -7,3 +7,12 @@
     @apply px-2 py-1 border border-neutral-200 rounded-md;
   }
 }
+
+@layer untilities {
+  .h-screen-s {
+    @apply h-[100svh]
+  }
+  .h-screen-l {
+    @apply h-[100lvh]
+  }
+}
