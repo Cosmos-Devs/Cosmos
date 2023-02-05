@@ -2,12 +2,14 @@ import type { AdminConfig } from "../types";
 import type Service from "./services";
 
 class Controller {
+  private userAuth: boolean
   private service: Service;
   public config: AdminConfig
 
   constructor(config: AdminConfig) {
     this.config = config;
     this.service = config?.service;
+    this.userAuth=false
   }
 
   public getItem = async (type: string, id: string) => {
@@ -19,7 +21,10 @@ class Controller {
   };
 
   public isUserIdentified = async () => {
-    return false
+    return this.userAuth
+  };
+  public identifyUser = async () => {
+    this.userAuth=true
   };
 
 }
